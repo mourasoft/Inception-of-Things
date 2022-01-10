@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
       vb.cpus = "2"
       end
     server.vm.provision "shell" do |s|
-      s.path = 'script/server.sh'
+      s.path = 'scripts/server.sh'
     end
   end
 
