@@ -48,5 +48,7 @@ kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manif
 
 echo 'Installing ingress controller...'
 
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml -n argocd 
+kubectl apply -f ingress.yml -n argocd 
+
+
 
