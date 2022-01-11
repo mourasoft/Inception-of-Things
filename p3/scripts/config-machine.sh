@@ -50,5 +50,12 @@ echo 'Installing ingress controller...'
 
 kubectl apply -f ingress.yml -n argocd 
 
+# # modify argocd Password 
+
+kubectl -n argocd patch secret argocd-secret \
+  -p '{"stringData": {
+    "admin.password": "$2a$12$jhhnO8A482jMs5pDQVOwH.aNxnDgJ6pe3oukrz9lGgRnL.edHuHEq",
+    "admin.passwordMtime": "'$(date +%FT%T%Z)'"
+  }}'
 
 
