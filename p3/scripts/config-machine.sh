@@ -42,7 +42,7 @@ kubectl create namespace argocd
 
 echo 'Installing argocd yaml file in the namespace...'
 
-kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml -n argocd
+kubectl apply -f argocd.yml -n argocd
 
 # # install ingress controller 
 
