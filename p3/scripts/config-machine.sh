@@ -42,13 +42,13 @@ kubectl create namespace argocd
 
 echo 'Installing argocd yaml file in the namespace...'
 
-kubectl apply -f argocd.yml -n argocd
+kubectl apply -f argocd.yaml -n argocd
 
 # # install ingress controller 
 
 echo 'Installing ingress controller...'
 
-kubectl apply -f ingress.yml -n argocd 
+kubectl apply -f ingress.yaml -n argocd 
 
 # # modify argocd Password 
 
