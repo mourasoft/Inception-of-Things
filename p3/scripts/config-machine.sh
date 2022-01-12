@@ -30,7 +30,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 echo 'Creating a cluster...'
 
-k3d cluster create my-cluster --api-port 6443 -p 80:80@loadbalancer
+k3d cluster create mmeski --api-port 6443 -p 80:80@loadbalancer
 
 # # create a namespace argocd
 
@@ -58,4 +58,10 @@ kubectl -n argocd patch secret argocd-secret \
     "admin.passwordMtime": "'$(date +%FT%T%Z)'"
   }}'
 
+# #creat a namespace dev
 
+kubectl create ns dev
+
+# # Deploy argo project
+
+kubectl apply -f project.yaml -n argocd
