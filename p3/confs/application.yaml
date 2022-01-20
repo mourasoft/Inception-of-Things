@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    app: argocdrocks
+  name: argocdrocks-app
+spec:
+  project: my-project
+  source:
+    repoURL: https://github.com/mourasoft/mmeski.git
+    targetRevision: main
+    path: app
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

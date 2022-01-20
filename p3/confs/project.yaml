@@ -9,7 +9,7 @@ spec:
   description: Our ArgoCD Project to deploy our app locally
  
   sourceRepos:
-  - "https://github.com/mmeski/*"
+  - "https://github.com/mourasoft/*"
   
   destinations:
   - namespace: dev
